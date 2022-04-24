@@ -1,23 +1,12 @@
-from credentials import Credentials
-class User(Credentials):
+class User():
     """
     class that defines the User object
     """
     
-
-    def __init__(self, username, account, password):
+    def __init__(self, account, username):
         self.username = username
         self.account = account
-        self.password  = password
-
-        users = {
-        'account':self.account,
-        'username': self.username,
-        'password':self.password
-        }
 
 
-        print(users)
 
-user1 = User("Michelle", "Twitter", Credentials.password1)
-    
+user = User("Twitter","Michelle")

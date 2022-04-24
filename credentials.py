@@ -5,11 +5,10 @@ class Credentials:
     def __init__(self, password):
         self.password = password        
 
-
-    def save_password(self, password):
+    @classmethod
+    def save_password(cls, password):
         """
         Function to add passwords
         """
     
 
-password1 = Credentials('1234')
