@@ -24,10 +24,10 @@ def create_account(account_username, account_name, account_password):
     return new_account
 
 def save_account(user):
-    user.save_user()
+    user.save_account()
 
 def delete_account(user):
-    user.save_user()
+    user.delete_user()
 
 def find_account(number):
     return Credentials.find_account_by_number(number)
@@ -45,7 +45,7 @@ def main():
 
         if option  == "signup":
             print("Create Account")
-            print("-" * 10)
+            print("-" * 100)
             print("Enter name...")
             name= input()
             print("Enter username...")
@@ -55,13 +55,13 @@ def main():
             save_user(create_user(username, password))
             print("Your account was created successfully using the following details")
             print("-"*10)
-            print(f"Name: {name}\n Username: {username} \n Password: {password}")
+            print(f"Name: {name}\nUsername: {username} \nPassword: {password}")
             print("\n \n")
 
         elif option == "login":
             print("Enter UserName")
             login_username = input()
-            print("Enter UserName")
+            print("Enter Password")
             login_password  = input()
             
             if find_user(login_password):
@@ -85,7 +85,7 @@ def main():
                         account_password = ''.join(random.choice(characters)
                         for x in range(random.randint(6, 16))) 
                         print(f'Password: {account_password}')
-                    elif decision == 'c':
+                    elif decision == 'n':
                         print("Enter Your Password")
                         account_password = input()
                     else:
