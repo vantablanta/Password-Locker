@@ -5,7 +5,7 @@ from user import Credentials
 class TestUser(unittest.TestCase):
     """"""
     new_user = User("Michelle", "pass")
-    
+
     def setup(self):
         self.new_user = User("Michelle", "pass")
 
