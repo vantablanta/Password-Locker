@@ -53,8 +53,7 @@ class Credentials:
         """
         Method that displays all the accounts 
         """
-        for account in cls.accounts:
-           return account
+        return cls.accounts
 
     @classmethod
     def find_account_by_number(cls, number):
@@ -64,14 +63,6 @@ class Credentials:
         for account in cls.accounts:
             if account.account_username == number:
                 return account
-
-    def find_credential(cls, account):
-        """
-        Method that takes in a account_name and returns a credential that matches that account
-        """
-        for account in cls.accounts:
-            if account.account_name == account:
-                return 
 
     @classmethod
     def user_exists(cls, number):

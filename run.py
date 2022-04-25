@@ -4,38 +4,65 @@ from user import User
 from user import Credentials
 
 def create_user(username, password):
+    """
+    Function to create a user
+    """
     new_user = User(username, password)
     return new_user
 
 def save_user(user):
+    """
+    Function to save a user
+    """
     user.save_user()
 
 def delete_user(user):
+    """
+    Function to delete a user
+    """
     user.delete_user()
 
 def find_user(number):
+    """
+    Function to find a user
+    """
     return User.find_user__by_number(number)
 
 def display_user():
+    """
+    Function to display users
+    """
     return User.display_users()
 
 def create_account(account_username, account_name, account_password):
+    """
+    Function to create a new accounts object
+    """
     new_account = Credentials(account_username, account_name, account_password)
     return new_account
 
 def save_account(user):
+    """
+    Function to save a created account object
+    """
     user.save_account()
 
 def delete_account(user):
+    """
+    Function to delete a Credentials 
+    """
     user.delete_user()
 
 def find_account(number):
+    """
+    Function to find credentials by username
+    """
     return Credentials.find_account_by_number(number)
 
-def search_account(account):
-    return Credentials.find_credential(account)
-
 def display_account():
+    """
+    Function to display accounts
+    """
     return Credentials.display_account()
 
 
@@ -72,7 +99,7 @@ def main():
             
             if find_user(login_password):
                 print("\n")
-                print("To create a credential (CC),view a credential (VC), find a credential(FC), or delete a credential (DC) ")
+                print("To create a credential (CC),view a credential (VC) or delete a credential (DC) ")
                 print("-"*50)
                 print("CC or VC")
                 choose = input().lower()
@@ -106,14 +133,14 @@ def main():
                         print("-"*25)
                         for user in display_account():
                             print(f"Account: {user.account_name} \nPassword: {user.account_password} \n\n")
-                
-                elif choose == "fc":
-                    print("Enter the Account Name you want to search")
-                    search_name = input().lower()
-                    if find_account(search_name):
-                        search_credential = find_account(search_name)
-                        print(f"Account Name : {search_credential.account_name}\nPassword :{search_credential.account_password}")
-                        print('-' * 25)         
+
+                elif choose == "dc":
+                    if(find_account(account_username)):
+                        print("Here is a list of your account credentials")
+                        print("-"*25)
+                        for user in display_account():
+                            print(f"Account: {user.account_name} \nPassword: {user.account_password} \n\n")
+                     
 
                     else:
                         print("Invalid Credentials")
