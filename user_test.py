@@ -18,15 +18,15 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_credentials.account_name, "facebook")
         self.assertEqual(self.new_credentials.account_password, "1234")
 
-    def test_save_user(self):
+    def test_save(self):
         self.new_user.save_user()
         self.new_credentials.save_account()
         self.assertEqual(len(User.users), 1)
         self.assertEqual(len(Credentials.accounts), 1)
 
-    def test_delete_user(self):
-        print(len(User.users))
+    def test_delete(self):
         self.assertEqual(len(User.users), 0)
+        self.assertEqual(len(Credentials.accounts), 0)
 
 
 if __name__ == '__main__':
