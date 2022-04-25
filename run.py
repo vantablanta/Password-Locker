@@ -135,13 +135,16 @@ def main():
                             print(f"Account: {user.account_name} \nPassword: {user.account_password} \n\n")
 
                 elif choose == "dc":
-                    if(find_account(account_username)):
-                        print("Here is a list of your account credentials")
-                        print("-"*25)
-                        for user in display_account():
-                            print(f"Account: {user.account_name} \nPassword: {user.account_password} \n\n")
-                     
+                    print("Enter the account name of the Credentials you want to delete")
+                    search_name = input().lower()
+                    search_name = input().lower()
 
+                    if(find_account(search_name)): 
+                        delete_account(search_name)    
+                        print("-"*25)
+                        for account in display_account():
+                            print(f"Account: {account.account_name} \nPassword: {account.account_password} deleted successfully")
+                     
                     else:
                         print("Invalid Credentials")
                 else:
