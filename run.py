@@ -32,6 +32,9 @@ def delete_account(user):
 def find_account(number):
     return Credentials.find_account_by_number(number)
 
+def search_account(account):
+    return Credentials.find_credential(account)
+
 def display_account():
     return Credentials.display_account()
 
@@ -69,7 +72,7 @@ def main():
             
             if find_user(login_password):
                 print("\n")
-                print("You can create multiple accounts(CC) and aslo view them (VC) ")
+                print("To create a credential (CC),view a credential (VC), find a credential(FC), or delete a credential (DC) ")
                 print("-"*50)
                 print("CC or VC")
                 choose = input().lower()
@@ -103,6 +106,15 @@ def main():
                         print("-"*25)
                         for user in display_account():
                             print(f"Account: {user.account_name} \nPassword: {user.account_password} \n\n")
+                
+                elif choose == "fc":
+                    print("Enter the Account Name you want to search")
+                    search_name = input().lower()
+                    if find_account(search_name):
+                        search_credential = find_account(search_name)
+                        print(f"Account Name : {search_credential.account_name}\nPassword :{search_credential.account_password}")
+                        print('-' * 25)         
+
                     else:
                         print("Invalid Credentials")
                 else:
