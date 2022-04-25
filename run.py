@@ -92,6 +92,7 @@ def main():
                         print("Enter a  valid choice")
                     save_account(create_account(account_username, account_name, account_password))
                     print("\n")
+                    print(account_username, account_name, account_password)
 
                 elif choose == "vc":
                     if(find_account(account_username)):
@@ -103,8 +104,6 @@ def main():
                         print("Invalid Credentials")
                 else:
                     print("Please try again")
-
-
             else:
                 print("Incorrect Info. Please try again")
                 print("\n")
