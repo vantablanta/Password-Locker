@@ -39,13 +39,16 @@ def display_account():
 
 def main():
     while True:
+        print("-" * 70)
         print("Welcome to Password Locker. Select Signup or Login to continue")
+        print("-" * 70)
         print("Signup or Login")
         option = input().lower()
 
         if option  == "signup":
+            print("\n")
             print("Create Account")
-            print("-" * 100)
+            print("-" * 25)
             print("Enter name...")
             name= input()
             print("Enter username...")
@@ -56,10 +59,10 @@ def main():
             print("Your account was created successfully using the following details")
             print("-"*10)
             print(f"Name: {name}\nUsername: {username} \nPassword: {password}")
-            print("\n \n")
+            print("\n")
 
         elif option == "login":
-            print("Enter UserName")
+            print("Enter Username")
             login_username = input()
             print("Enter Password")
             login_password  = input()

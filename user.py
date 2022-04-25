@@ -1,5 +1,7 @@
 class User:
-    """"""
+    """
+    class to define the user object and it methods 
+    """
     users = []
 
     def __init__(self, username, password):
@@ -30,7 +32,9 @@ class User:
 
 
 class Credentials:
-    """"""
+    """
+    class to define the credentials object and its methods
+    """
     accounts = []
 
     def __init__(self, account_username, account_name, account_password):
