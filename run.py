@@ -99,7 +99,7 @@ def main():
                         print("Here is a list of your account credentials")
                         print("-"*25)
                         for user in display_account():
-                            print(f"Account: {user.account_name} \n Password: {user.account_password} \n\n")
+                            print(f"Account: {user.account_name} \nPassword: {user.account_password} \n\n")
                     else:
                         print("Invalid Credentials")
                 else:
